@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genetic LIMS Demo</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; color: #111827; background: #f8fafc; }
+    .card { background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08); max-width: 700px; margin: auto; }
+    h1 { margin-top: 0; color: #1d4ed8; }
+    pre { background: #e2e8f0; padding: 1rem; border-radius: 0.75rem; overflow-x: auto; }
+    a { color: #2563eb; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Genetic LIMS Demo is ready</h1>
+    <p>The app source is built in this folder. To run it, use:</p>
+    <pre>python3 download_dataset.py
+npm install
+npm start</pre>
+    <p>Then open:</p>
+    <pre>http://localhost:3000</pre>
+    <p>Note: This environment does not currently include <code>npm</code> or <code>node</code>, so the server cannot be started here.</p>
+    <p>Files created:</p>
+    <ul>
+      <li><code>server.js</code> — Express backend with SQLite support</li>
+      <li><code>public/index.html</code>, <code>public/styles.css</code>, <code>public/app.js</code> — frontend UI</li>
+      <li><code>download_dataset.py</code> — downloads a sample genetic dataset</li>
+      <li><code>data/samples.csv</code> — downloaded sample metadata</li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "job-1783308551661-2249": {
+    "status": "done",
+    "started_at": "2026-07-06T03:29:11.661Z",
+    "outDir": "/Users/canwu/flgao/omscs/job/fullstack/data/analysis/job-1783308551661-2249",
+    "finished_at": "2026-07-06T03:29:12.782Z",
+    "exit_code": 0
+  },
+  "job-1783309336598-7135": {
+    "status": "done",
+    "started_at": "2026-07-06T03:42:16.598Z",
+    "outDir": "/Users/canwu/flgao/omscs/job/fullstack/data/analysis/job-1783309336598-7135",
+    "finished_at": "2026-07-06T03:42:17.898Z",
+    "exit_code": 0
+  },
+  "job-1783310265568-9564": {
+    "status": "done",
+    "started_at": "2026-07-06T03:57:45.568Z",
+    "outDir": "/Users/canwu/flgao/omscs/job/fullstack/data/analysis/job-1783310265568-9564",
+    "finished_at": "2026-07-06T03:57:46.866Z",
+    "exit_code": 0
+  },
+  "job-1783310933546-9264": {
+    "status": "done",
+    "started_at": "2026-07-06T04:08:53.546Z",
+    "outDir": "/Users/canwu/flgao/omscs/job/fullstack/data/analysis/job-1783310933546-9264",
+    "finished_at": "2026-07-06T04:08:54.986Z",
+    "exit_code": 0
+  },
+  "job-1783312007559-7705": {
+    "status": "done",
+    "started_at": "2026-07-06T04:26:47.559Z",
+    "outDir": "/Users/canwu/flgao/omscs/job/fullstack/data/analysis/job-1783312007559-7705",
+    "finished_at": "2026-07-06T04:26:48.904Z",
+    "exit_code": 0
+  }
+}

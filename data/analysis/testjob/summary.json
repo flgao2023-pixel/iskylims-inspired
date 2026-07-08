@@ -1,0 +1,11 @@
+{
+  "total_samples": 2505,
+  "counts": {
+    "super_pop": 1,
+    "EUR": 503,
+    "EAS": 504,
+    "AMR": 347,
+    "SAS": 489,
+    "AFR": 661
+  }
+}
