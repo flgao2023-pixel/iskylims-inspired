@@ -33,5 +33,12 @@
     "outDir": "/Users/canwu/flgao/omscs/job/fullstack/data/analysis/job-1783312007559-7705",
     "finished_at": "2026-07-06T04:26:48.904Z",
     "exit_code": 0
+  },
+  "job-1783477773120-9141": {
+    "status": "done",
+    "started_at": "2026-07-08T02:29:33.121Z",
+    "outDir": "/Users/canwu/flgao/omscs/job/fullstack/data/analysis/job-1783477773120-9141",
+    "finished_at": "2026-07-08T02:29:34.863Z",
+    "exit_code": 0
   }
 }

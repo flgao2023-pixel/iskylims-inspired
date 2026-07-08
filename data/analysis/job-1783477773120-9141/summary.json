@@ -1,0 +1,45 @@
+{
+  "total_samples": 2505,
+  "by_superpopulation": {
+    "super_pop": 1,
+    "EUR": 503,
+    "EAS": 504,
+    "AMR": 347,
+    "SAS": 489,
+    "AFR": 661
+  },
+  "by_population": {
+    "pop": 1,
+    "GBR": 91,
+    "FIN": 99,
+    "CHS": 105,
+    "PUR": 104,
+    "CDX": 93,
+    "CLM": 94,
+    "IBS": 107,
+    "PEL": 85,
+    "PJL": 96,
+    "KHV": 99,
+    "ACB": 96,
+    "GWD": 113,
+    "ESN": 99,
+    "BEB": 86,
+    "MSL": 85,
+    "STU": 102,
+    "ITU": 102,
+    "CEU": 99,
+    "YRI": 108,
+    "CHB": 103,
+    "JPT": 104,
+    "LWK": 99,
+    "ASW": 61,
+    "MXL": 64,
+    "TSI": 107,
+    "GIH": 103
+  },
+  "by_gender": {
+    "gender": 1,
+    "male": 1233,
+    "female": 1271
+  }
+}
