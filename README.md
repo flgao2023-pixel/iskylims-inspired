@@ -34,6 +34,10 @@ npm start
 http://localhost:3000
 ```
 
+Or view the live demo here:
+
+https://flgao2023-pixel.github.io/iskylims-inspired/Genetic%20LIMS%20Demo.htm
+
 ## Notes
 
 - The backend seeds the SQLite database from `data/samples.csv` if it exists.
