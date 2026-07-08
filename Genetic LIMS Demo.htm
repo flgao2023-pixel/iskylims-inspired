@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en" trancy-version="7.8.9"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genetic LIMS Demo</title>
+  <link rel="stylesheet" href="./Genetic LIMS Demo_files/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Genetic LIMS Workflow Demo</h1>
+    <p>Search samples, review workflow steps, and submit synthetic processing events.</p>
+  </header>
+
+  <main>
+    <section class="panel dashboard-panel">
+      <h2>Dashboard</h2>
+      <div class="dashboard-grid">
+        <div class="dashboard-card">
+          <h3>Total Samples</h3>
+          <p id="dashboardSamples">2503</p>
+        </div>
+        <div class="dashboard-card">
+          <h3>Total Workflows</h3>
+          <p id="dashboardWorkflows">1</p>
+        </div>
+        <div class="dashboard-card">
+          <h3>Analysis Jobs</h3>
+          <p id="dashboardAnalysis">5</p>
+        </div>
+        <div class="dashboard-card">
+          <h3>Pending Analysis</h3>
+          <p id="dashboardPending">0</p>
+        </div>
+        <div class="dashboard-card">
+          <h3>Total Runs</h3>
+          <p id="dashboardRuns">4</p>
+        </div>
+        <div class="dashboard-card">
+          <h3>Service Requests</h3>
+          <p id="dashboardRequests">9</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel intake-panel">
+      <h2>Sample Intake</h2>
+      <form id="sampleForm">
+        <div class="form-row">
+          <label>
+            Sample ID
+            <input id="sampleId" type="text" placeholder="HG00096" required="">
+          </label>
+          <label>
+            Population
+            <input id="samplePopulation" type="text" placeholder="GBR">
+          </label>
+          <label>
+            Superpopulation
+            <input id="sampleSuperpopulation" type="text" placeholder="EUR">
+          </label>
+          <label>
+            Gender
+            <select id="sampleGender">
+              <option value="">Select</option>
+              <option value="male">male</option>
+              <option value="female">female</option>
+              <option value="other">other</option>
+            </select>
+          </label>
+          <label>
+            Project
+            <input id="sampleProject" type="text" placeholder="1000 Genomes">
+          </label>
+          <label>
+            Source
+            <input id="sampleSource" type="text" placeholder="blood">
+          </label>
+          <label>
+            Collection Date
+            <input id="sampleCollectionDate" type="date">
+          </label>
+          <label>
+            Status
+            <select id="sampleStatus">
+              <option value="">Select</option>
+              <option value="received">received</option>
+              <option value="processing">processing</option>
+              <option value="completed">completed</option>
+              <option value="archived">archived</option>
+            </select>
+          </label>
+        </div>
+        <button type="submit">Register / Update Sample</button>
+      </form>
+    </section>
+
+    <section class="panel search-panel">
+      <h2>Sample Catalog</h2>
+      <div class="control-row">
+        <input id="searchInput" type="search" placeholder="Search sample ID, population, superpopulation, project, source">
+        <button id="searchButton">Search</button>
+      </div>
+      <div class="control-row pagination-row">
+        <button id="prevPage" type="button" disabled="">Previous</button>
+        <span id="pageInfo">Page 1 / 251 (2503 samples)</span>
+        <button id="nextPage" type="button">Next</button>
+      </div>
+      <div class="table-wrapper">
+        <table id="samplesTable">
+          <thead>
+            <tr>
+              <th>Sample ID</th>
+              <th>Population</th>
+              <th>Superpopulation</th>
+              <th>Gender</th>
+              <th>Project</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+    <tr>
+      <td>HG00099</td>
+      <td>GBR</td>
+      <td>EUR</td>
+      <td>female</td>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        <button class="action-button" data-action="edit" data-sample-id="HG00099">Edit</button>
+        <button class="action-button delete" data-action="delete" data-sample-id="HG00099">Delete</button>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HG00100</td>
+      <td>GBR</td>
+      <td>EUR</td>
+      <td>female</td>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        <button class="action-button" data-action="edit" data-sample-id="HG00100">Edit</button>
+        <button class="action-button delete" data-action="delete" data-sample-id="HG00100">Delete</button>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HG00101</td>
+      <td>GBR</td>
+      <td>EUR</td>
+      <td>male</td>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        <button class="action-button" data-action="edit" data-sample-id="HG00101">Edit</button>
+        <button class="action-button delete" data-action="delete" data-sample-id="HG00101">Delete</button>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HG00102</td>
+      <td>GBR</td>
+      <td>EUR</td>
+      <td>female</td>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        <button class="action-button" data-action="edit" data-sample-id="HG00102">Edit</button>
+        <button class="action-button delete" data-action="delete" data-sample-id="HG00102">Delete</button>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HG00103</td>
+      <td>GBR</td>
+      <td>EUR</td>
+      <td>male</td>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        <button class="action-button" data-action="edit" data-sample-id="HG00103">Edit</button>
+        <button class="action-button delete" data-action="delete" data-sample-id="HG00103">Delete</button>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HG00105</td>
+      <td>GBR</td>
+      <td>EUR</td>
+      <td>male</td>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        <button class="action-button" data-action="edit" data-sample-id="HG00105">Edit</button>
+        <button class="action-button delete" data-action="delete" data-sample-id="HG00105">Delete</button>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HG00106</td>
+      <td>GBR</td>
+      <td>EUR</td>
+      <td>female</td>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        <button class="action-button" data-action="edit" data-sample-id="HG00106">Edit</button>
+        <button class="action-button delete" data-action="delete" data-sample-id="HG00106">Delete</button>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HG00107</td>
+      <td>GBR</td>
+      <td>EUR</td>
+      <td>male</td>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        <button class="action-button" data-action="edit" data-sample-id="HG00107">Edit</button>
+        <button class="action-button delete" data-action="delete" data-sample-id="HG00107">Delete</button>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HG00108</td>
+      <td>GBR</td>
+      <td>EUR</td>
+      <td>male</td>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        <button class="action-button" data-action="edit" data-sample-id="HG00108">Edit</button>
+        <button class="action-button delete" data-action="delete" data-sample-id="HG00108">Delete</button>
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HG00109</td>
+      <td>GBR</td>
+      <td>EUR</td>
+      <td>male</td>
+      <td>-</td>
+      <td>-</td>
+      <td>
+        <button class="action-button" data-action="edit" data-sample-id="HG00109">Edit</button>
+        <button class="action-button delete" data-action="delete" data-sample-id="HG00109">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel run-panel">
+      <h2>Run Management</h2>
+      <p>Create and track runs with sample sheet details, project, and status.</p>
+      <form id="runForm">
+        <div class="form-row">
+          <label>
+            Run Name
+            <input id="runName" type="text" placeholder="Run 2026-07-05" required="">
+          </label>
+          <label>
+            Project
+            <input id="runProject" type="text" placeholder="Whole Genome Seq">
+          </label>
+          <label>
+            Run Date
+            <input id="runDate" type="date">
+          </label>
+          <label>
+            Status
+            <select id="runStatus">
+              <option value="">Select</option>
+              <option value="sheet prepared">sheet prepared</option>
+              <option value="running">running</option>
+              <option value="completed">completed</option>
+              <option value="archived">archived</option>
+            </select>
+          </label>
+          <label class="full-width">
+            Sample Sheet
+            <textarea id="runSampleSheet" placeholder="Sample IDs or sheet notes" rows="3"></textarea>
+          </label>
+        </div>
+        <button type="submit">Create Run</button>
+      </form>
+      <div class="table-wrapper">
+        <table id="runsTable">
+          <thead>
+            <tr>
+              <th>Run Name</th>
+              <th>Project</th>
+              <th>Run Date</th>
+              <th>Status</th>
+              <th>Created</th>
+            </tr>
+          </thead>
+          <tbody>
+    <tr>
+      <td>Wetlab Run 2026-07-b</td>
+      <td>dd</td>
+      <td>2026-07-08</td>
+      <td>running</td>
+      <td>7/6/2026, 12:26:24 AM</td>
+    </tr>
+  
+    <tr>
+      <td>Wetlab Run 2026-07-A</td>
+      <td>1000 Genomes</td>
+      <td>2026-07-05</td>
+      <td>recorded</td>
+      <td>7/6/2026, 12:00:32 AM</td>
+    </tr>
+  
+    <tr>
+      <td>Demux Run 2026-07-B</td>
+      <td>Cancer Panel</td>
+      <td>2026-07-06</td>
+      <td>running</td>
+      <td>7/6/2026, 12:00:32 AM</td>
+    </tr>
+  
+    <tr>
+      <td>Completed Sequencing Run</td>
+      <td>Clinical Seq</td>
+      <td>2026-07-01</td>
+      <td>completed</td>
+      <td>7/6/2026, 12:00:32 AM</td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel service-panel">
+      <h2>Service Requests</h2>
+      <p>Track requests for support, consulting, and IT service management.</p>
+      <form id="serviceForm">
+        <div class="form-row">
+          <label>
+            Requester
+            <input id="serviceRequester" type="text" placeholder="Name or team" required="">
+          </label>
+          <label>
+            Category
+            <select id="serviceCategory" required="">
+              <option value="">Select</option>
+              <option value="service request">service request</option>
+              <option value="consulting request">consulting request</option>
+              <option value="IT support">IT support</option>
+            </select>
+          </label>
+          <label>
+            Priority
+            <select id="servicePriority" required="">
+              <option value="">Select</option>
+              <option value="low">low</option>
+              <option value="medium">medium</option>
+              <option value="high">high</option>
+            </select>
+          </label>
+          <label>
+            Status
+            <select id="serviceStatus" required="">
+              <option value="">Select</option>
+              <option value="open">open</option>
+              <option value="in progress">in progress</option>
+              <option value="resolved">resolved</option>
+            </select>
+          </label>
+          <label class="full-width">
+            Description
+            <textarea id="serviceDescription" placeholder="Describe the request" rows="3" required=""></textarea>
+          </label>
+        </div>
+        <button id="submitServiceRequestButton" type="button">Submit Request</button>
+      </form>
+      <div class="table-wrapper">
+        <table id="serviceTable">
+          <thead>
+            <tr>
+              <th>Requester</th>
+              <th>Category</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th>Created</th>
+            </tr>
+          </thead>
+          <tbody>
+    <tr>
+      <td>ff</td>
+      <td>service request</td>
+      <td>low</td>
+      <td>open</td>
+      <td>7/6/2026, 12:26:05 AM</td>
+    </tr>
+  
+    <tr>
+      <td>dt</td>
+      <td>service request</td>
+      <td>medium</td>
+      <td>open</td>
+      <td>7/6/2026, 12:24:31 AM</td>
+    </tr>
+  
+    <tr>
+      <td>tt</td>
+      <td>service request</td>
+      <td>low</td>
+      <td>open</td>
+      <td>7/6/2026, 12:24:22 AM</td>
+    </tr>
+  
+    <tr>
+      <td>UI Live Test</td>
+      <td>IT support</td>
+      <td>high</td>
+      <td>open</td>
+      <td>7/6/2026, 12:23:49 AM</td>
+    </tr>
+  
+    <tr>
+      <td>UI Test</td>
+      <td>IT support</td>
+      <td>high</td>
+      <td>open</td>
+      <td>7/6/2026, 12:13:07 AM</td>
+    </tr>
+  
+    <tr>
+      <td>Test User</td>
+      <td>IT support</td>
+      <td>high</td>
+      <td>open</td>
+      <td>7/6/2026, 12:00:46 AM</td>
+    </tr>
+  
+    <tr>
+      <td>Dr. Lee</td>
+      <td>service request</td>
+      <td>high</td>
+      <td>open</td>
+      <td>7/6/2026, 12:00:32 AM</td>
+    </tr>
+  
+    <tr>
+      <td>Bioinformatics</td>
+      <td>IT support</td>
+      <td>medium</td>
+      <td>in progress</td>
+      <td>7/6/2026, 12:00:32 AM</td>
+    </tr>
+  
+    <tr>
+      <td>Lab Manager</td>
+      <td>consulting request</td>
+      <td>low</td>
+      <td>resolved</td>
+      <td>7/6/2026, 12:00:32 AM</td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel report-panel">
+      <h2>Reports</h2>
+      <p>Get quick summary metrics for samples, runs, and service requests.</p>
+      <div class="dashboard-grid">
+        <div class="dashboard-card">
+          <h3>Total Samples</h3>
+          <p id="reportSamples">0</p>
+        </div>
+        <div class="dashboard-card">
+          <h3>Total Runs</h3>
+          <p id="reportRuns">0</p>
+        </div>
+        <div class="dashboard-card">
+          <h3>Total Requests</h3>
+          <p id="reportRequests">0</p>
+        </div>
+      </div>
+      <div class="table-wrapper">
+        <table id="reportTable">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody id="reportTableBody"><tr><td colspan="2">Loading report summary…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel analysis-panel">
+      <h2>Analysis</h2>
+      <p>Run a background analysis on the sample dataset. The front-end remains responsive while analysis runs; results appear when ready.</p>
+      <div class="control-row">
+        <button id="startAnalysis">Start Analysis</button>
+        <span id="analysisStatus">Job job-1783477773120-9141: done</span>
+      </div>
+
+      <div id="analysisResult" style="margin-top: 1rem; display: block;">
+        <h3>Result</h3>
+        <img id="analysisImage" src="./Genetic LIMS Demo_files/result" alt="Analysis plot" style="max-width: 100%; border-radius: 0.5rem; box-shadow: rgba(2, 6, 23, 0.08) 0px 10px 30px; display: block;">
+      </div>
+    </section>
+
+    <section class="panel workflow-panel">
+      <h2>Workflow Log</h2>
+      <form id="workflowForm">
+        <div class="form-row">
+          <label>
+            Sample ID
+            <input id="workflowSampleId" type="text" placeholder="e.g. HG00096" required="">
+          </label>
+          <label>
+            Step
+            <input id="workflowStep" type="text" placeholder="DNA extraction / alignment" required="">
+          </label>
+          <label>
+            Status
+            <select id="workflowStatus" required="">
+              <option value="">Select status</option>
+              <option value="Pending">Pending</option>
+              <option value="In progress">In progress</option>
+              <option value="Complete">Complete</option>
+            </select>
+          </label>
+        </div>
+        <button type="submit">Record Workflow Event</button>
+      </form>
+
+      <div class="table-wrapper">
+        <table id="workflowTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Sample ID</th>
+              <th>Step</th>
+              <th>Status</th>
+              <th>Recorded</th>
+            </tr>
+          </thead>
+          <tbody>
+    <tr>
+      <td>2</td>
+      <td>HG00109</td>
+      <td>alignment</td>
+      <td>Pending</td>
+      <td>7/5/2026, 11:39:38 PM</td>
+    </tr>
+  </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Use the Python downloader script to fetch a sample dataset and seed the database.</p>
+  </footer>
+
+  <script src="./Genetic LIMS Demo_files/app.js"></script>
+
+
+<div id="hl-aria-live-message-container" aria-live="polite" class="visually-hidden"></div><div id="hl-aria-live-alert-container" role="alert" aria-live="assertive" class="visually-hidden"></div></body></html>
